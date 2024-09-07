@@ -1,0 +1,26 @@
+server:
+  name: sensors-management-service
+
+camel:
+  component:
+    nats:
+      servers: 'nats://localhost:4222'
+      username: 'sensor-producer'
+      password: 'changeme'
+      max-reconnect-attempts: 5
+      jetstream:
+        auto-configure: true
+        stream:
+          name: 'sensors'
+      
+warehouse:
+  sensors:
+    - id: t1
+      subject: temperature 
+      port: 3344
+      threshold: 30
+    - id: h1
+      subject: humidity 
+      port: 3355
+      threshold: 80
+      
