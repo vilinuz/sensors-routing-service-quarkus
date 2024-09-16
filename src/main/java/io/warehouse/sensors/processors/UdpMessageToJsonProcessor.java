@@ -12,14 +12,14 @@ import io.warehouse.sensors.validator.SensorMessageValidator;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class UdpMessageToJsponProcessor implements Processor {
+public class UdpMessageToJsonProcessor implements Processor {
     private static final String REGEX_PATTERN = "^sensor_id=([a-zA-Z0-9]{2});\\s*value=(\\d{2})$";
     private static final Pattern MESSAGE_PATTERN = Pattern.compile(REGEX_PATTERN);
 
     private final SensorMessageValidator validator;
 
 
-    public UdpMessageToJsponProcessor(SensorMessageValidator validator) {
+    public UdpMessageToJsonProcessor(SensorMessageValidator validator) {
         this.validator = validator;
     }
 

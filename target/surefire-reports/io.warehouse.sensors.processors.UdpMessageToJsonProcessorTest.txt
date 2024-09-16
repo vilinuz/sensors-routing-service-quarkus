@@ -1,0 +1,42 @@
+-------------------------------------------------------------------------------
+Test set: io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.486 s <<< FAILURE! -- in io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest
+io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest.testValidateAndConvertWithWhitespace -- Time elapsed: 0.054 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "io.warehouse.sensors.validator.SensorMessageValidator.validate(io.warehouse.sensors.model.SensorMessage)" because "this.validator" is null
+	at io.warehouse.sensors.processors.UdpMessageToJsponProcessor.validateAndConvert(UdpMessageToJsponProcessor.java:38)
+	at io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest.testValidateAndConvertWithWhitespace(UdpMessageToJsonProcessorTest.java:84)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest.testValidateAndConvertValidMessage -- Time elapsed: 0.008 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "io.warehouse.sensors.validator.SensorMessageValidator.validate(io.warehouse.sensors.model.SensorMessage)" because "this.validator" is null
+	at io.warehouse.sensors.processors.UdpMessageToJsponProcessor.validateAndConvert(UdpMessageToJsponProcessor.java:38)
+	at io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest.testValidateAndConvertValidMessage(UdpMessageToJsonProcessorTest.java:65)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest.testProcessInvalidMessage -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.apache.camel.Exchange.getIn()" because "this.exchange" is null
+	at io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest.testProcessInvalidMessage(UdpMessageToJsonProcessorTest.java:54)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest.testValidateAndConvertWithLeadingTrailingSpaces -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "io.warehouse.sensors.validator.SensorMessageValidator.validate(io.warehouse.sensors.model.SensorMessage)" because "this.validator" is null
+	at io.warehouse.sensors.processors.UdpMessageToJsponProcessor.validateAndConvert(UdpMessageToJsponProcessor.java:38)
+	at io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest.testValidateAndConvertWithLeadingTrailingSpaces(UdpMessageToJsonProcessorTest.java:96)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest.testProcessValidMessage -- Time elapsed: 0.005 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.apache.camel.Exchange.getIn()" because "this.exchange" is null
+	at io.warehouse.sensors.processors.UdpMessageToJsonProcessorTest.testProcessValidMessage(UdpMessageToJsonProcessorTest.java:41)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

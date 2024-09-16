@@ -4,7 +4,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.dataformat.JsonLibrary;
 
 import io.warehouse.sensors.config.props.WarehousePropertiesConfig;
-import io.warehouse.sensors.processors.UdpMessageToJsponProcessor;
+import io.warehouse.sensors.processors.UdpMessageToJsonProcessor;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
@@ -16,9 +16,9 @@ public class SensorsManagementRouteConfig extends RouteBuilder {
     private static final String ERROR_NATS_SUBJECT_CHANNEL = "nats:error";
 
     private final WarehousePropertiesConfig config;
-    private final UdpMessageToJsponProcessor processor;
+    private final UdpMessageToJsonProcessor processor;
 
-    public SensorsManagementRouteConfig(WarehousePropertiesConfig config, UdpMessageToJsponProcessor processor) {
+    public SensorsManagementRouteConfig(WarehousePropertiesConfig config, UdpMessageToJsonProcessor processor) {
         this.config = config;
         this.processor = processor;
     }
@@ -35,6 +35,7 @@ public class SensorsManagementRouteConfig extends RouteBuilder {
         from(UDP_MESSAGE_CHANNEL)
             .log("Received message: ${body}")
             .process(processor::process)
+            .log("Message trnasformed to: ${body}")
             .marshal().json(JsonLibrary.Jackson)
             .choice()
                 .when(simple("${headers.sensor_id} == 't1'"))

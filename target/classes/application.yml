@@ -1,5 +1,5 @@
 server:
-  name: sensors-routing-    management-service
+  name: sensors-management-service
 
 camel:
   component:

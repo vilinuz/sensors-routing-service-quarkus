@@ -1,0 +1,7 @@
+/home/vilivom/src/sensors-routing-service-quarkus/src/main/java/io/warehouse/sensors/SensorsManagementRouteConfig.java
+/home/vilivom/src/sensors-routing-service-quarkus/src/main/java/io/warehouse/sensors/config/props/WarehousePropertiesConfig.java
+/home/vilivom/src/sensors-routing-service-quarkus/src/main/java/io/warehouse/sensors/exception/SensorHandlerFailedException.java
+/home/vilivom/src/sensors-routing-service-quarkus/src/main/java/io/warehouse/sensors/exception/SensorMessageValidationException.java
+/home/vilivom/src/sensors-routing-service-quarkus/src/main/java/io/warehouse/sensors/model/SensorMessage.java
+/home/vilivom/src/sensors-routing-service-quarkus/src/main/java/io/warehouse/sensors/processors/UdpMessageToJsponProcessor.java
+/home/vilivom/src/sensors-routing-service-quarkus/src/main/java/io/warehouse/sensors/validator/SensorMessageValidator.java
